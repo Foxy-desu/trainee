@@ -1,0 +1,43 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
+  background: #242424;
+  border: 1px solid #c3c1c1;
+  border-radius: 50%;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: #c3c1c1;
+  transition: transform 0.2s;
+
+  &:first-child {
+    transform:  rotate(45deg);
+    
+    &.expanded {
+      transform: translateX(-3.5px) rotate(45deg);
+    }
+  }
+
+  &:last-child {
+    transform: rotate(-45deg);
+    
+    &.expanded {
+      transform: translateX(3.5px) rotate(-45deg);
+    }
+  }
+
+  &.collapsed {
+    transform-origin: center;
+  }
+
+  &.expanded {
+    transform-origin: bottom center;
+  }
+}
