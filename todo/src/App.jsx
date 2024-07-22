@@ -1,53 +1,55 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import TaskFormModel from './features/task_form/model/taskFormModel';
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0);
 
-  function setMinDate() {
-    const now = new Date(Date.now());
-    const day = now.getDate();
-    const month = now.getMonth() + 1;
-    const year = now.getFullYear();
+  // function setMinDate() {
+  //   const now = new Date(Date.now());
+  //   const day = now.getDate();
+  //   const month = now.getMonth() + 1;
+  //   const year = now.getFullYear();
 
-    return `${year}-${month < 10? '0'+month : month}-${day < 10? '0'+day : day}`
-  }
+  //   return `${year}-${month < 10? '0'+month : month}-${day < 10? '0'+day : day}`
+  // }
 
   return (
     <>
       <header>
         <h1 className='appTitle'>Мои задачи</h1>
         <div className='taskBtnBlock'>
-          <button className='taskBtn expand'>
+          {/* <button className='taskBtn expand'>
               <span className='taskBtnLine'/>
               <span className='taskBtnLine'/>
-          </button>
+          </button> */}
         </div>
-        <form action="">
-          <div className='blockWrap'>
-            <div className='titleWrap'>
-              <label className='inputLabel' htmlFor='title'>
-                Заголовок:
-              </label>
-              <input className='taskInput extraPadding' id='title' type="text" placeholder="Купить корм для рыб"/>
+        <TaskFormModel/>
+        <>
+          {/* <form action="">
+            <div className='blockWrap'>
+              <div className='titleWrap'>
+                <label className='inputLabel' htmlFor='title'>
+                  Заголовок:
+                </label>
+                <input className='taskInput extraPadding' id='title' type="text" placeholder="Купить корм для рыб"/>
+              </div>
+              <div>
+                <label className='inputLabel' htmlFor='date'>
+                  Выполнить до:
+                </label>
+                <input id='date' type="date" min={setMinDate()}/>
+              </div>
             </div>
-            <div>
-              <label className='inputLabel' htmlFor='date'>
-                Выполнить до:
-              </label>
-              <input id='date' type="date" min={setMinDate()}/>
+            <label className='inputLabel' htmlFor='description'>
+              Описание:
+            </label>
+            <textarea className='taskInput extraPadding' id='description' placeholder='У Васи закончился корм - нужно купить...'></textarea>
+            <div className='taskBtnBlock'>
+              <button className='taskBtn' type="submit">+</button>
             </div>
-          </div>
-          <label className='inputLabel' htmlFor='description'>
-            Описание:
-          </label>
-          <textarea className='taskInput extraPadding' id='description' placeholder='У Васи закончился корм - нужно купить...'></textarea>
-          <div className='taskBtnBlock'>
-            <button className='taskBtn' type="submit">+</button>
-          </div>
-        </form>
+          </form> */}
+        </>
       </header>
       <main>
         <h2 style={{textAlign: 'center'}}>Список Задач</h2>
@@ -82,7 +84,7 @@ function App() {
             <article className='card'>
               <div className='statusBar' style={{display: 'flex', gap: '15px', justifyContent: 'space-between'}}>
                 <div className='statusBar_info'>
-                  <span>Завершена</span>/<span>07/07/2024</span>
+                  <span>Завершена</span>
                 </div>
                 <div className='statusBar_controls'>
                   <div className='btnGroup'>
