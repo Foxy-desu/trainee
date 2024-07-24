@@ -70,9 +70,10 @@ const MyOperateBtn = ({ purpose, ...rest }) => {
       <div className={cl.iconWrap}>
         <picture>
           <source srcSet={getBtnData(purpose).images.svg} type="image/svg" />
+          <source srcSet={getBtnData(purpose).images.png} type="image/png" />
           <img
             className={cl.icon}
-            src={getBtnData(purpose).images.png}
+            src=""
             alt=""
           />
         </picture>
