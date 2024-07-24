@@ -69,8 +69,8 @@ const MyOperateBtn = ({ purpose, ...rest }) => {
       <span className="visuallyHidden">{getBtnData(purpose).text}</span>
       <div className={cl.iconWrap}>
         <picture>
-          <source srcSet={getBtnData(purpose).images.svg} type="image/svg" />
           <source srcSet={getBtnData(purpose).images.png} type="image/png" />
+          <source srcSet={getBtnData(purpose).images.svg} type="image/svg" />
           <img
             className={cl.icon}
             src=""
