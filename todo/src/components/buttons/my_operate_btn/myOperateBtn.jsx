@@ -5,6 +5,10 @@ import savePng from '../../../assets/png/check.png';
 import saveSvg from '../../../assets/svg/check.svg';
 import removePng from '../../../assets/png/bin.png';
 import removeSvg from '../../../assets/svg/bin.svg';
+import completePng from '../../../assets/png/complete.png';
+import completeSvg from '../../../assets/svg/complete.svg';
+import incompletePng from '../../../assets/png/incomplete.png';
+import incompleteSvg from '../../../assets/svg/incomplete.svg';
 
 const MyOperateBtn = ({purpose, ...rest}) => {
   function getBtnData(purpose) {
@@ -28,6 +32,20 @@ const MyOperateBtn = ({purpose, ...rest}) => {
         images: {
           svg: removeSvg,
           png: removePng
+        }
+      };
+      case 'complete': return {
+        text: 'Задача выполнена',
+        images: {
+          svg: completeSvg,
+          png: completePng
+        }
+      };
+      case 'incomplete': return {
+        text: 'Задача невыполнена',
+        images: {
+          svg: incompleteSvg,
+          png: incompletePng
         }
       };
       default: return {
