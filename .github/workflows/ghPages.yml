@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./todo
         run: 
-          npm install --package-lock-only
+          npm install
           npm ci
       - name: Build
         working-directory: ./todo
