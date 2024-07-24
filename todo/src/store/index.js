@@ -23,9 +23,7 @@ export const store = configureStore({
   reducer: {
     tasks: taskReducer,
   },
-  preloadedState: {
-    tasks: getTasksFromLocalStorage(),
-  },
+  preloadedState: getTasksFromLocalStorage(),
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat(tasksMiddleware)
   }
