@@ -28,6 +28,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'todo/package-lock.json'
       - name: Install dependencies
+        working-directory: ./todo
         run: 
           npm install --package-lock-only
           npm ci
