@@ -12,7 +12,7 @@ const MyDateInput = ({ label = "", ...rest }) => {
 
   return (
     <>
-      <label className={cl.label} htmlFor={rest.id}>
+      <label className={cl.label} htmlFor={rest.id} title={rest?.title}>
         {label}
       </label>
       <input className={cl.input} type="date" min={getMinDate()} {...rest} />

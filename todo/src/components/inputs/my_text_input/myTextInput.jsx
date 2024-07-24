@@ -3,7 +3,7 @@ import cl from "./myTextInput.module.scss";
 const MyTextInput = ({ label = "", placeholder = "", ...rest }) => {
   return (
     <>
-      <label className={cl.label} htmlFor={rest.id}>
+      <label className={cl.label} htmlFor={rest.id} title={rest?.title}>
         {label}
       </label>
       <input

@@ -12,7 +12,8 @@ const TaskCreateForm = ({ data, handlers, errors }) => {
       <div className={cl.rowWrap}>
         <div className={cl.titleWrap}>
           <MyTextInput
-            label="Заголовок:"
+            label="Заголовок*"
+            title='обязательное поле'
             placeholder="Купить корм для рыб"
             id="titleInput"
             value={data.title}
@@ -22,7 +23,8 @@ const TaskCreateForm = ({ data, handlers, errors }) => {
         </div>
         <div className={cl.dateWrap}>
           <MyDateInput
-            label="Выполнить до:"
+            label="Выполнить до*"
+            title='обязательное поле'
             id="timePicker"
             value={data.completionDate}
             onChange={handlers.date}
@@ -32,7 +34,7 @@ const TaskCreateForm = ({ data, handlers, errors }) => {
       </div>
       <div className={cl.columnWrap}>
         <MyTextArea
-          label="Описание:"
+          label="Описание"
           placeholder="У Васи закончился корм - нужно купить."
           id="descriptionArea"
           value={data.description}
