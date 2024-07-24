@@ -21,7 +21,15 @@ export const taskSlice = createSlice({
         if (task.id === action.payload.id) {
           task.title = action.payload.title;
           task.description = action.payload.description;
-          task.completionTime = action.payload.completionTime;
+          task.completionDate = action.payload.completionTime;
+        }
+        return task;
+      })
+    },
+    changeTaskStatus: (state, action)=> {
+      state.tasks = state.tasks.map(task => {
+        if (task.id === action.payload.id) {
+          task.isComplete = action.payload.isComplete;
         }
         return task;
       })
@@ -29,5 +37,5 @@ export const taskSlice = createSlice({
   }
 });
 
-export const {addTask, removeTask, editTask} = taskSlice.actions;
+export const {addTask, removeTask, editTask, changeTaskStatus} = taskSlice.actions;
 export default taskSlice.reducer;
