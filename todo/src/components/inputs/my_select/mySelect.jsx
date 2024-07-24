@@ -1,17 +1,19 @@
 import React from "react";
+import cl from './mySelect.module.scss';
+
 const MySelect =({label="", options, currentOption, ...rest})=> {
   
   const renderOptions =(options)=> {
     return options.map(option=> {
       if(option.value === '') {
         return (
-          <option key={option.value} value={option.value} disabled={true}>
+          <option className={cl.option} key={option.value} value={option.value} disabled={true}>
             {option.label}
           </option>
         )
       }
       return (
-        <option key={option.value} value={option.value}>
+        <option className={cl.option} key={option.value} value={option.value}>
           {option.label}
         </option>
       )
@@ -23,7 +25,7 @@ const MySelect =({label="", options, currentOption, ...rest})=> {
       <label className='visuallyHidden' htmlFor={rest.id}>
         {label}
       </label>
-      <select value={currentOption} {...rest}>
+      <select className={cl.select} value={currentOption} {...rest}>
         {renderOptions(options)}
       </select>
     </>

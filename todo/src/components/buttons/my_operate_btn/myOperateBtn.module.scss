@@ -1,0 +1,22 @@
+.btn {
+  width: 7vw;
+  height: 7vw;
+  max-width: 48px;
+  max-height: 48px;
+  min-width: 32px;
+  min-height: 32px;
+  background-color: #5d5d5d;
+  overflow: hidden;
+
+  @media screen and (hover: hover) {
+    &:hover {
+      border-color: #68aee7;
+    }
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}

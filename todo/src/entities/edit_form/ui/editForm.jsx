@@ -4,7 +4,7 @@ import cl from './editForm.module.scss';
 const EditForm =({editForm})=> {
 
   return (
-    <form>
+    <form className={cl.form}>
       <div className={cl.rowWrap}>
         <div className={cl.titleWrap}>
           <MyTextInput

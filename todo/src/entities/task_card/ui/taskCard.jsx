@@ -3,6 +3,7 @@ import EditForm from '../../edit_form/ui/editForm';
 import cl from './taskCard.module.scss';
 
 const TaskCard =({cardData, editForm, handlers})=> {
+  const isComplete = cardData.isComplete;
 
 
   const getEditBtnHandler=(editMode, handlers) =>{
@@ -23,14 +24,18 @@ const TaskCard =({cardData, editForm, handlers})=> {
     <article className={cl.card}>
       <div className={cl.statusBar}>
         <div className={cl.info}>
-          <span className={cl.status}>
-           {cardData.isComplete? 'завершена ' : 'незавершена '}
-          </span>
-          {!editForm.editMode && (
-            <span className={cl.infoDate}>
-              дедлайн: {cardData.completionDate}
+          <div>
+            <span className={`${cl.status} ${isComplete? cl.complete : cl.incomplete}`}>
+            {cardData.isComplete? 'завершена ' : 'незавершена '}
             </span>
-          )}
+          </div>
+          <div>
+            {!editForm.editMode && (
+              <span className={`${cl.deadline} ${isComplete ? cl.inactive : cl.active}`}>
+                дедлайн: {cardData.completionDate}
+              </span>
+            )}
+          </div>
         </div>
         <div className={cl.controlls}>
           <div className={cl.btnsWrap}>

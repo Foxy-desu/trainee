@@ -60,16 +60,16 @@ const MyOperateBtn = ({purpose, ...rest}) => {
 
   return (
     <button className={cl.btn} {...rest}>
-    <span className='visuallyHidden'>
-      {getBtnData(purpose).text}
-    </span>
-    <div className={cl.iconWrap}>
-      <picture>
-        <source srcSet={getBtnData(purpose).images.svg} type='image/svg'/>
-        <img className={cl.icon} src={getBtnData(purpose).images.png} alt="" />
-      </picture>
-    </div>
-  </button>
+      <span className='visuallyHidden'>
+        {getBtnData(purpose).text}
+      </span>
+      <div className={cl.iconWrap}>
+        <picture>
+          <source srcSet={getBtnData(purpose).images.svg} type='image/svg'/>
+          <img className={cl.icon} src={getBtnData(purpose).images.png} alt="" />
+        </picture>
+      </div>
+    </button>
   )
 };
 export default MyOperateBtn;

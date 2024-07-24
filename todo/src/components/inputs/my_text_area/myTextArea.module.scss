@@ -1,10 +1,18 @@
 .label {
   display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .textArea {
   box-sizing: border-box;
   width: 100%;
-  padding: 3px;
+  padding: 4px;
+  font-size: 16px;
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
   resize: vertical;
 }
