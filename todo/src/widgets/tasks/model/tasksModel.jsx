@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import {useMemo, useState} from 'react';
-import TaskList from "../ui/taskList";
+import TaskList from "../ui/task_list/taskList";
 import SortFilterControlls from "../../../entities/sort_filter_controls/ui/sortFilterControlls";
+import Tasks from "../ui/tasks/tasks";
 
-const TaskListModel = ()=> {
+const TasksModel = ()=> {
   const sortOptions = [
     {value: '', label: 'Сортировать по'},
     {value: 'completionDate', label: 'дате выполнения'},
@@ -99,18 +100,18 @@ const TaskListModel = ()=> {
 
   return (
     <>
-      <SortFilterControlls
-        sortOptions={sortOptions}
-        filterOptions={filterOptions}
-        currentSort={currentSort}
-        currentFilter={currentFilter}
-        handleSort={handleSort}
-        handleFilter={handleFilter} />
-      <TaskList
-        tasks={filtered}
-      />
+      <Tasks
+        controlls={{
+          sortOptions,
+          filterOptions,
+          currentSort,
+          currentFilter,
+          handleSort,
+          handleFilter
+        }}
+        list={{filtered}}/>
     </>
   )
 };
 
-export default TaskListModel;
+export default TasksModel;

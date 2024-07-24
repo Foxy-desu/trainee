@@ -1,4 +1,4 @@
-import TaskCardModel from '../../../entities/task_card/model/taskCardModel';
+import TaskCardModel from '../../../../entities/task_card/model/taskCardModel';
 import cl from './taskList.module.scss';
 
 const TaskList =({tasks})=> {
@@ -6,7 +6,7 @@ const TaskList =({tasks})=> {
   const renderTasks = (tasks) => {
     return tasks.map(task=>{
       return (
-        <li key={task.id}>
+        <li key={task.id} className={cl.taskListItem}>
           <TaskCardModel cardData={task}/>
         </li>
       )
@@ -20,7 +20,7 @@ const TaskList =({tasks})=> {
               {renderTasks(tasks)}
             </ul>
           )
-        : <p>Список задач пуст</p>
+        : <p style={{textAlign: 'center'}}>Список задач пуст</p>
     }
     </>
   )
