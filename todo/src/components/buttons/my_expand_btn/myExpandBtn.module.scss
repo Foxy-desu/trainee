@@ -18,8 +18,8 @@
   transition: transform 0.2s;
 
   &:first-child {
-    transform:  rotate(45deg);
-    
+    transform: rotate(45deg);
+
     &.expanded {
       transform: translateX(-3.5px) rotate(45deg);
     }
@@ -27,7 +27,7 @@
 
   &:last-child {
     transform: rotate(-45deg);
-    
+
     &.expanded {
       transform: translateX(3.5px) rotate(-45deg);
     }

@@ -1,105 +1,16 @@
 #root {
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: clamp(16px, 6vw, 2rem);
 }
 
 .appTitle {
   text-align: center;
+  font-size: clamp(35px, 6vw, 3.2em);
 }
 
 .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.inputLabel {
-  display: block;
-}
-
-.taskInput {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.taskInput.extraPadding {
-  padding: 2.5px;
-}
-
-.blockWrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.titleWrap {
-  display: block;
-  flex-grow: 1;
-}
-
-.taskBtnBlock {
-  position: relative;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.87);
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.taskBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  padding: 3px 8px;
-  transform: translate(-50%, -50%);
-  background: #242424;
-  border: 1px solid #c3c1c1;
-  border-radius: 50%;
-}
-
-.taskBtn.expand {
-  padding: 13px;
-}
-
-.btnElems {
-  position: relative;
-}
-
-.taskBtnLine {
-  display: block;
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  background: #c3c1c1;
-  transform-origin: center;
-  transition: transform 0.2s;
-}
-
-.taskBtnLine:first-child {
-  transform:  rotate(45deg);
-}
-
-.taskBtnLine:last-child {
-  transform: rotate(-45deg);
-}
-
-.expand_toBeClosed .taskBtnLine {
-  transform-origin: bottom center;
-}
-
-.expand_toBeClosed .taskBtnLine:first-child {
-  transform: translateX(-3.5px) rotate(45deg);
-}
-
-.expand_toBeClosed .taskBtnLine:last-child {
-  transform: translateX(3.5px) rotate(-45deg);
 }
 
 .visuallyHidden {
@@ -114,4 +25,3 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-

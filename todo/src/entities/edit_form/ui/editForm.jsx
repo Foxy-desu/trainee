@@ -1,8 +1,11 @@
-import { MyTextInput, MyDateInput, MyTextArea, MyAddBtn } from "../../../components"
-import cl from './editForm.module.scss';
+import {
+  MyTextInput,
+  MyDateInput,
+  MyTextArea,
+} from "../../../components";
+import cl from "./editForm.module.scss";
 
-const EditForm =({editForm})=> {
-
+const EditForm = ({ editForm }) => {
   return (
     <form className={cl.form}>
       <div className={cl.rowWrap}>
@@ -13,7 +16,8 @@ const EditForm =({editForm})=> {
             id="titleEditInput"
             value={editForm.title}
             onChange={editForm.handleTitleChange}
-            style={editForm.error.title ? {borderColor: 'orange'} : {}}/>
+            style={editForm.error.title ? { borderColor: "orange" } : {}}
+          />
         </div>
         <div className={cl.dateWrap}>
           <MyDateInput
@@ -21,7 +25,8 @@ const EditForm =({editForm})=> {
             id="timeEditPicker"
             value={editForm.date}
             onChange={editForm.handleDateChange}
-            style={editForm.error.date ? {borderColor: 'orange'} : {}}/>
+            style={editForm.error.date ? { borderColor: "orange" } : {}}
+          />
         </div>
       </div>
       <div className={cl.columnWrap}>
@@ -30,10 +35,11 @@ const EditForm =({editForm})=> {
           placeholder="Новое Описание"
           id="descriptionEditArea"
           value={editForm.description}
-          onChange={editForm.handleDescriptionChange}/>
+          onChange={editForm.handleDescriptionChange}
+        />
       </div>
     </form>
-  )
+  );
 };
 
 export default EditForm;

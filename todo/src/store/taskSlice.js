@@ -1,41 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tasks: []
+  tasks: [],
 };
 
-// createSlice function uses Immer, so we already have a copy of the state and 
+// createSlice function uses Immer, so we already have a copy of the state and
 //can easily modify it without having to worry about immutability.
 export const taskSlice = createSlice({
-  name: 'tasks',
+  name: "tasks",
   initialState,
   reducers: {
-    addTask: (state, action)=> {
+    addTask: (state, action) => {
       state.tasks.push(action.payload);
     },
-    removeTask: (state, action)=> {
-      state.tasks = state.tasks.filter(task => task.id !== action.payload);
+    removeTask: (state, action) => {
+      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
     },
-    editTask: (state, action)=> {
-      state.tasks = state.tasks.map(task => {
+    editTask: (state, action) => {
+      state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload.id) {
           task.title = action.payload.title;
           task.description = action.payload.description;
           task.completionDate = action.payload.completionTime;
         }
         return task;
-      })
+      });
     },
-    changeTaskStatus: (state, action)=> {
-      state.tasks = state.tasks.map(task => {
+    changeTaskStatus: (state, action) => {
+      state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload.id) {
           task.isComplete = action.payload.isComplete;
         }
         return task;
-      })
-    }
-  }
+      });
+    },
+  },
 });
 
-export const {addTask, removeTask, editTask, changeTaskStatus} = taskSlice.actions;
+export const { addTask, removeTask, editTask, changeTaskStatus } =
+  taskSlice.actions;
 export default taskSlice.reducer;

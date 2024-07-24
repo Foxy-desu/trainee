@@ -1,6 +1,6 @@
-import SortFilterControlls from '../../../../entities/sort_filter_controls/ui/sortFilterControlls';
-import TaskList from '../task_list/taskList';
-const Tasks =({controlls, list})=> {
+import SortFilterControlls from "../../../../entities/sort_filter_controls/ui/sortFilterControlls";
+import TaskList from "../task_list/taskList";
+const Tasks = ({ controlls, list }) => {
   return (
     <>
       <SortFilterControlls
@@ -11,11 +11,9 @@ const Tasks =({controlls, list})=> {
         handleSort={controlls.handleSort}
         handleFilter={controlls.handleFilter}
       />
-      <TaskList
-        tasks={list.filtered}
-      />
+      <TaskList tasks={list.filtered} />
     </>
-  )
+  );
 };
 
 export default Tasks;

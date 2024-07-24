@@ -1,19 +1,27 @@
 import { useForm } from "../../../utils/hooks/useForm";
-import { useDispatch} from 'react-redux';
-import { addTask } from '../../../store/taskSlice';
+import { useDispatch } from "react-redux";
+import { addTask } from "../../../store/taskSlice";
 import TaskCreateForm from "../ui/taskCreateForm";
 
-const TaskCreateFormModel =()=> {
+const TaskCreateFormModel = () => {
   const dispatch = useDispatch();
-  const {title, date, description, error,...formFn} = useForm();
-  const formData = {title: title, completionDate: date, description: description};
-  const changeHandlers = {title: formFn.handleTitleChange, date: formFn.handleDateChange, description: formFn.handleDescriptionChange};
+  const { title, date, description, error, ...formFn } = useForm();
+  const formData = {
+    title: title,
+    completionDate: date,
+    description: description,
+  };
+  const changeHandlers = {
+    title: formFn.handleTitleChange,
+    date: formFn.handleDateChange,
+    description: formFn.handleDescriptionChange,
+  };
 
-  const submitHandler =(e)=> {
+  const submitHandler = (e) => {
     e.preventDefault();
     formFn.validateForm() && handleValidatedFormSubmition();
   };
-  const handleValidatedFormSubmition =()=> {
+  const handleValidatedFormSubmition = () => {
     const newTask = {
       ...formData,
       id: Date.now(),
@@ -27,11 +35,11 @@ const TaskCreateFormModel =()=> {
     <>
       <TaskCreateForm
         data={formData}
-        handlers={{...changeHandlers, submit: submitHandler}}
+        handlers={{ ...changeHandlers, submit: submitHandler }}
         errors={error}
       />
     </>
-  )
+  );
 };
 
 export default TaskCreateFormModel;

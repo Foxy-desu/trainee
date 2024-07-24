@@ -1,21 +1,18 @@
-import cl from './myTextArea.module.scss';
+import cl from "./myTextArea.module.scss";
 
-const MyTextsArea = (
-  {
-    label="",
-    placeholder="",
-    ...rest
-  }
-) => {
+const MyTextsArea = ({ label = "", placeholder = "", ...rest }) => {
   return (
     <>
-    <label className={cl.label} htmlFor={rest.id}>
-      {label}
-    </label>
-    <textarea className={cl.textArea} placeholder={placeholder} {...rest}>
-    </textarea>
+      <label className={cl.label} htmlFor={rest.id}>
+        {label}
+      </label>
+      <textarea
+        className={cl.textArea}
+        placeholder={placeholder}
+        {...rest}
+      ></textarea>
     </>
-  )
+  );
 };
 
 export default MyTextsArea;
