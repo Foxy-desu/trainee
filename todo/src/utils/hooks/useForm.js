@@ -1,11 +1,16 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
-export const useForm =()=> {
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [description, setDescription] = useState('');
+export const useForm =(initialState, isEdit=false)=> {
+  const [title, setTitle] = useState(initialState?.title ||'');
+  const [date, setDate] = useState(initialState?.completionDate || '');
+  const [description, setDescription] = useState(initialState?.description || '');
   const [error, setError] = useState({title: '', date: ''});
-  
+
+  useEffect(()=> {
+    if (isEdit) 
+      resetValues();
+  }, [isEdit])
+
   const handleTitleChange = (e)=> {
     setTitle(e.target.value);
   };
@@ -15,14 +20,18 @@ export const useForm =()=> {
   const handleDescriptionChange = (e)=> {
     setDescription(e.target.value);
   };
-
   const resetValues = ()=> {
-    setTitle('');
-    setDate('');
-    setDescription('');
     setError({title: '', date: ''});
+    if (initialState) {
+      setTitle(initialState?.title);
+      setDate(initialState?.completionDate);
+      setDescription(initialState?.description);
+    } else {
+      setTitle('');
+      setDate('');
+      setDescription('');
+    }
   };
-
   const validateForm = ()=> {
     const error = {title: '', date: ''};
     if(!title.trim()) {
