@@ -73,7 +73,6 @@ const MyOperateBtn = ({ purpose, ...rest }) => {
           <source srcSet={getBtnData(purpose).images.svg} type="image/svg" />
           <img
             className={cl.icon}
-            src=""
             alt=""
           />
         </picture>
