@@ -1,6 +1,6 @@
 import cl from './myTaskDesc.module.scss';
 
-const MyTaskDesc = ({desc}) => {
+const MyTaskDesc = ({desc=""}) => {
 
   return (
     <p className={cl.desc}>
