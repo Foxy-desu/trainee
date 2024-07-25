@@ -1,6 +1,6 @@
 import TaskFormModel from "./features/task_create_form/model/taskCreateFormModel";
-import "./App.css";
 import TasksModel from "./widgets/tasks/model/tasksModel";
+import "./App.css";
 
 function App() {
   return (
